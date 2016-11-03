@@ -18,7 +18,7 @@ int print_dirinfo(DIR* current_dir, unsigned char file_type) {
   int sum = 0;
   while ((dir_info = readdir(current_dir)) != NULL) {
     if (dir_info->d_type == file_type) {
-      printf("%s\n", dir_info->d_name);
+      printf("File name: %s\n", dir_info->d_name);
       if (dir_info->d_type == DT_REG) {
 	stat(dir_info->d_name, &data);
 	sum += data.st_size;
